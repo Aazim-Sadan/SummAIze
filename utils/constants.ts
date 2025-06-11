@@ -1,0 +1,31 @@
+import { isDev } from "./helpers";
+
+export const pricingPlans = [
+    {
+        name: 'basic',
+        price: 9,
+        description: 'will add description later',
+        items: [
+            '5 PDF summaries per month',
+            'Standard processing speed',
+            'Email support'
+        ],
+        id: 'basic',
+        paymentLink: isDev ? 'https://buy.stripe.com/test_8x29AS4T74Q85Bq1ZS2cg00' : '',
+        priceId:  isDev ? 'price_1RWjlsAWAeIKt8RPJmgu8Wuf' : '',
+    },
+    {
+        name: 'Pro',
+        price: 19,
+        description: 'For professional and teams',
+        items: [
+            'Unlimited PDF summaries',
+            'Priority processing',
+            '24/7 priority support',
+            'Markdown Export',
+        ],
+        id: 'pro',
+        paymentLink: isDev ? 'https://buy.stripe.com/test_9B600i3P30zS0h6cEw2cg01' : '',
+        priceId: isDev ? 'price_1RWjuwAWAeIKt8RPsLdZa621' : '',
+    }
+]

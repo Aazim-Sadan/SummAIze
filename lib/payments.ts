@@ -65,7 +65,7 @@ async function createOrUpdateUser({
 
         }
 
-
+console.log(user)
 
     } catch (error) {
         console.error('Error creating or updaing user', error);
