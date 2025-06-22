@@ -36,7 +36,7 @@ export async function getSummaryById(id: string) {
 export async function getUserUploadCount(userId: string) {
   try {
     const sql = await getDbConnection();
-    const [result] = await sql`SELECT COUNT(*) as c FROM pdf_summaries WHERE user_id = ${userId}`
+    const [result] = await sql`SELECT COUNT(*) as count FROM pdf_summaries WHERE user_id = ${userId}`
     return result.count;
   } catch (err) {
     console.error('Error fetchiung user upload count', err);
