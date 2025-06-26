@@ -12,7 +12,7 @@ export const pricingPlans = [
         ],
         id: 'basic',
         paymentLink: isDev ? 'https://buy.stripe.com/test_8x29AS4T74Q85Bq1ZS2cg00' : '',
-        priceId:  isDev ? 'price_1RWjlsAWAeIKt8RPJmgu8Wuf' : '',
+        priceId: isDev ? 'price_1RWjlsAWAeIKt8RPJmgu8Wuf' : '',
     },
     {
         name: 'Pro',
@@ -29,3 +29,14 @@ export const pricingPlans = [
         priceId: isDev ? 'price_1RWjuwAWAeIKt8RPsLdZa621' : '',
     }
 ]
+
+export const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChilder: 0.2,
+            delayChilden: 0.1,
+        },
+    },
+}
