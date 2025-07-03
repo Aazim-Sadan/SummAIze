@@ -7,6 +7,8 @@ import {
   formatFileName,
 } from '@/lib/utils';
 import { formatDistanceToNow } from 'date-fns';
+import { MotionDiv } from '../common/motion-wrapper';
+import { itemVariants } from '@/utils/constants';
 
 const SummaryHeader = ({
   fileUrl,
@@ -61,10 +63,15 @@ export default function SummaryCard({
   summary: any;
 }) {
   return (
-    <div>
+    <MotionDiv
+      variants={itemVariants}
+      initial="hidden"
+      animate="visible"
+      whileHover={{ scale: 1.02, transition: { duration: 0.2, ease: 'easeOut' } }}
+    >
       <Card className="relative h-full">
         <div className="absolute top-2 right-2">
-          <DeleteButton  summaryId={summary.id}/>
+          <DeleteButton summaryId={summary.id} />
         </div>
 
         <Link
@@ -94,6 +101,6 @@ export default function SummaryCard({
           </div>
         </Link>
       </Card>
-    </div>
+    </MotionDiv>
   );
 }
