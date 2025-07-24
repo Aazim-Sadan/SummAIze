@@ -53,7 +53,7 @@ export default function SummaryViewer({ summary }: { summary: string }) {
         </div>
       </MotionDiv>
 
-      {JSON.stringify(sections[currentSection].points)}
+      {/* {JSON.stringify(sections[currentSection].points)} */}
 
       <NavigationControls
         currentSection={currentSection}

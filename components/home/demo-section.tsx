@@ -6,30 +6,31 @@ import SummaryViewer from "../summaries/summary-viewer";
 
 const DEMO_SUMMARY = `# Quick Overview
 
-## 🔻 Bottom Line
-🚀 Master Next.js 15 to build fast, scalable, and SEO-friendly web applications with the latest React features and best practices.
 
-💡 Learn how to use App Router, Server Actions, and React Suspense for seamless UX.
-🔧 Understand file-based routing and how to implement layouts and templates.
-🌐 Improve performance through built-in image and font optimization tools.
+• 💡 Learn how to use App Router, Server Actions, and React Suspense for seamless UX.
+• 🔧 Understand file-based routing and how to implement layouts and templates.
+• 🌐 Improve performance through built-in image and font optimization tools.
 ⚙️ Build dynamic and static pages with ease using hybrid rendering techniques.
 
 ## 📦 What You'll Learn
-- ✅ Routing, dynamic routes, and nested layouts
-- ✅ Server-side rendering (SSR) and static site generation (SSG)
-- ✅ Data fetching using async/await and Server Components
-- ✅ API routes and middleware
-- ✅ Integrating third-party APIs and authentication
-- ✅ Deploying with Vercel and optimizing for performance
+• ✅ Routing, dynamic routes, and nested layouts
+• ✅ Server-side rendering (SSR) and static site generation (SSG)
+• ✅ Data fetching using async/await and Server Components
+• ✅ API routes and middleware
+• ✅ Integrating third-party APIs and authentication
+• ✅ Deploying with Vercel and optimizing for performance
 
 ## 🧠 Skills You’ll Gain
-- 🎯 Deep understanding of modern React and Next.js architecture
-- 🛠️ Full-stack development with API handling
-- 🧩 Component reusability and layout management
-- 📈 SEO strategies and performance tuning
+• 🎯 Deep understanding of modern React and Next.js architecture
+• 🛠️ Full-stack development with API handling
+• 🧩 Component reusability and layout management
+• 📈 SEO strategies and performance tuning
+
+## 🔻 Bottom Line
+ 🚀 Master Next.js 15 to build fast, scalable, and SEO-friendly web applications with the latest React features and best practices.
 
 ## 🔥 Final Thoughts
-This course transforms developers into Next.js experts, enabling them to build production-ready applications with confidence and efficiency.
+• This course transforms developers into Next.js experts, enabling them to build production-ready applications with confidence and efficiency.
 Take your web development career to the next level with one of the most in-demand frameworks of the modern web.`;
 
 
