@@ -4,10 +4,11 @@ import { useUploadThing } from '@/utils/uploadthing';
 import UploadFormInput from './upload-form-input'
 import { z } from 'zod';
 import { toast } from 'sonner';
-import { generatePdfSummary, storePdfSummaryAction } from '@/actions/upload-actions';
+import { generatePdfSummary, generatePdfText, storePdfSummaryAction } from '@/actions/upload-actions';
 import { useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import LoadingSkeleton from './loading-skeleton';
+import { formatFileNameAsTitle } from '@/utils/format-utils';
 
 const schema = z.object({
     file: z
@@ -89,23 +90,47 @@ export default function UploadForm() {
 
             // parse the pdf using lang chain
 
-            const result = await generatePdfSummary(res);
-
-            const { data = null, message = null } = result || {};
 
 
 
-            if (data) {
+ 
                 let storeResult: any;
                 toast('📄 Saving PDF...', {
                     description: 'Hang tight! We are saving your summary! ✨'
                 });
 
-                if (data.summary) {
+
+                const formattedFileName = formatFileNameAsTitle(file.name);
+
+                const result = await generatePdfText({
+                    fileUrl: res[0].serverData.file.url,
+                })
+
+                toast('📄 Generating PDF Summary', {
+                    description: 'Hang tight! Our AI is reading through your document! ✨'
+                })
+         
+                // const { data = null, message = null } = result || {};
+
+                       //call ai service
+                       //parse the pdf using lang chain
+                       const summaryResult = await generatePdfSummary({
+                        pdfText: result?.data?.pdfText ?? '',
+                        fileName: formattedFileName
+                    });
+
+                    toast('📄 Saving PDF Summary', {
+                        description: 'Hang tight! Our AI is reading through your document! ✨'
+                    })
+             
+                    const { data = null, message = null } = summaryResult || {};
+
+                if (data?.summary) {
+                    //save the summary to the database
                     storeResult = await storePdfSummaryAction({
                         summary: data.summary,
                         fileUrl: res[0].serverData.file.url,
-                        title: data.title,
+                        title: formattedFileName,
                         fileName: file.name
                     })
                     toast('✨ Summary Generated', {
@@ -114,7 +139,6 @@ export default function UploadForm() {
 
                     formRef.current?.reset();
                     router.push(`/summaries/${storeResult.data.id}`);
-                }
             }
 
             // summarize the pdf using AI
@@ -141,8 +165,8 @@ export default function UploadForm() {
                         className='relative flex justify-center'
                     >
                         <span className='bg-background px-3 text-muted-foreground text-sm'>
-                            Upload PDF                           
-                             </span>
+                            Upload PDF
+                        </span>
                     </div>
                 </div>
             </div>
@@ -167,7 +191,7 @@ export default function UploadForm() {
                             </span>
                         </div>
                     </div>
-                    <LoadingSkeleton/>
+                    <LoadingSkeleton />
                 </>
             )
             }
