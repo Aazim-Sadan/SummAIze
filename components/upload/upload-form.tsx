@@ -39,8 +39,8 @@ export default function UploadForm() {
                 description: err.message
             })
         },
-        onUploadBegin: ({ file }) => {
-            console.log("upload has begun for", file);
+        onUploadBegin: (data ) => {
+            console.log("upload has begun for", data);
         },
     });
 
@@ -75,8 +75,8 @@ export default function UploadForm() {
 
 
             //upload the file to uploadthing
-            const res = await startUpload([file]);
-            if (!res) {
+            const uploadResponse = await startUpload([file]);
+            if (!uploadResponse) {
                 toast('Something went wrong', {
                     description: 'Please use a different file'
                 })
@@ -90,20 +90,16 @@ export default function UploadForm() {
 
             // parse the pdf using lang chain
 
-
-
-
  
                 let storeResult: any;
                 toast('📄 Saving PDF...', {
                     description: 'Hang tight! We are saving your summary! ✨'
                 });
 
-
                 const formattedFileName = formatFileNameAsTitle(file.name);
 
                 const result = await generatePdfText({
-                    fileUrl: res[0].serverData.file.url,
+                    fileUrl: uploadResponse[0].serverData.fileUrl,
                 })
 
                 toast('📄 Generating PDF Summary', {
@@ -129,7 +125,7 @@ export default function UploadForm() {
                     //save the summary to the database
                     storeResult = await storePdfSummaryAction({
                         summary: data.summary,
-                        fileUrl: res[0].serverData.file.url,
+                        fileUrl: uploadResponse[0].serverData.fileUrl,
                         title: formattedFileName,
                         fileName: file.name
                     })
