@@ -11,8 +11,12 @@ export const pricingPlans = [
             'Email support'
         ],
         id: 'basic',
-        paymentLink: isDev ? 'https://buy.stripe.com/test_8x29AS4T74Q85Bq1ZS2cg00' : '',
-        priceId: isDev ? 'price_1RWjlsAWAeIKt8RPJmgu8Wuf' : '',
+        paymentLink: isDev 
+        ? 'https://buy.stripe.com/test_8x29AS4T74Q85Bq1ZS2cg00' 
+        : 'https://buy.stripe.com/test_8x29AS4T74Q85Bq1ZS2cg00' ,
+        priceId: isDev 
+        ? 'price_1RWjlsAWAeIKt8RPJmgu8Wuf' 
+        : 'price_1RWjlsAWAeIKt8RPJmgu8Wuf' ,
     },
     {
         name: 'Pro',
@@ -25,8 +29,13 @@ export const pricingPlans = [
             'Markdown Export',
         ],
         id: 'pro',
-        paymentLink: isDev ? 'https://buy.stripe.com/test_9B600i3P30zS0h6cEw2cg01' : '',
-        priceId: isDev ? 'price_1RWjuwAWAeIKt8RPsLdZa621' : '',
+        paymentLink: isDev 
+        ? 'https://buy.stripe.com/test_9B600i3P30zS0h6cEw2cg01' 
+        : 'https://buy.stripe.com/test_9B600i3P30zS0h6cEw2cg01' ,
+        priceId: isDev 
+        ? 'price_1RWjuwAWAeIKt8RPsLdZa621' 
+        : 'price_1RWjuwAWAeIKt8RPsLdZa621' 
+        ,
     }
 ]
 
