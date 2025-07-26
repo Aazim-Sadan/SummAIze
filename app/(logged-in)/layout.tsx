@@ -12,10 +12,10 @@ export default async function Layout({ children }: { children: React.ReactNode }
         redirect('/sign-in')
     }
 
-    const hasActiveSubscription = await hasActivePlan(user.emailAddresses[0].emailAddress);
+    const hasActiveSubscription = await hasActivePlan(user.emailAddresses[0].emailAddress.toLowerCase());
 
 
-    console.log(hasActiveSubscription)
+    console.log("Subscription status", hasActiveSubscription)
 
 
     // TODO

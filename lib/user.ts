@@ -15,17 +15,25 @@ export async function getPriceIdForActive(email: string) {
 export async function hasActivePlan(email: string) {
     const sql = await getDbConnection();
 
-    const query = await sql`SELECT price_id, status FROM users where email = ${email} AND status = 'active' AND price_id IS NOT NULL`;
+    const query = await sql`SELECT price_id, status FROM users where email = ${email.toLowerCase()} AND status = 'active' AND price_id IS NOT NULL`;
+
+    console.log("Email:", email);
+    console.log("Query result:", query);
+    console.log("Returning:", query && query.length > 0);
+    
 
     return query && query.length > 0;
 }
 
 
 
-export async function hasReachedUploadLimit(userId: string) {
+export async function hasReachedUploadLimit(user: User) {
+    const userId = user.id;
+    const email = user.emailAddresses[0].emailAddress.toLowerCase();
+
     const uploadCount = await getUserUploadCount(userId);
 
-    const priceId = await getPriceIdForActive(userId);
+    const priceId = await getPriceIdForActive(email);
 
     const isPro = pricingPlans.find((plan) => plan.priceId === priceId)?.id === 'pro';
 

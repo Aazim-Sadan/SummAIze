@@ -19,11 +19,10 @@ export default async function PlanBadge() {
     }
 
     let planName = 'Buy a plan';
-    console.log(planName)
-    console.log(priceId)
+    console.log("Price_Id", priceId)
 
     const plan = pricingPlans.find((plan) => plan.priceId === priceId);
-    console.log(plan)
+    console.log("Plan", plan)
     if (plan) {
         planName = plan.name;
     }

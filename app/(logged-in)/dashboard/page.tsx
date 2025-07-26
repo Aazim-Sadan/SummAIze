@@ -18,7 +18,7 @@ export default async function Dashboard() {
     return redirect("/sign-in");
   }
 
-  const { hasReachedLimit, uploadLimit } = await hasReachedUploadLimit(userId);
+  const { hasReachedLimit, uploadLimit } = await hasReachedUploadLimit(user);
   const summaries = await getSummaries(userId);
 
   return (
