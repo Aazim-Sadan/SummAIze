@@ -19,9 +19,11 @@ export default async function PlanBadge() {
     }
 
     let planName = 'Buy a plan';
+    console.log(planName)
+    console.log(priceId)
 
     const plan = pricingPlans.find((plan) => plan.priceId === priceId);
-
+    console.log(plan)
     if (plan) {
         planName = plan.name;
     }
@@ -34,7 +36,7 @@ export default async function PlanBadge() {
                 !priceId && 'from-red-100 to-red-200 border-red-300')}
         >
             <Crown className={cn(
-                'w-3 h-4 mr-1 text-amber-600', 
+                'w-3 h-4 mr-1 text-amber-600',
                 !priceId && 'text-red-600')} />
             {planName}</Badge>
     )
