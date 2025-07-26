@@ -17,10 +17,11 @@ export default async function Layout({ children }: { children: React.ReactNode }
 
     console.log(hasActiveSubscription)
 
-    // todo: remove this
-    // if (!hasActiveSubscription) {
-    //     return <UpgradeRequired />
-    // }
+
+    // TODO
+    if (!hasActiveSubscription) {
+        return <UpgradeRequired />
+    }
 
     return <>{children}</>
 }
