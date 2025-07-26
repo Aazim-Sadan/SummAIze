@@ -18,6 +18,9 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: "SummAIze - AI Powered PDF Summarization",
   description: "Save hours of reading time, Translate lengthy PDFs into clear, accurate summaries in seconds with our advanced AI technology",
+  icons: {
+    icon: '/icon.ico'
+  }
 };
 
 export default function RootLayout({
