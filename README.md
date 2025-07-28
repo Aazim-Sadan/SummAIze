@@ -1,8 +1,6 @@
 # SummAIze
-- **Transform PDFs into consice summaries**
+- **Transform PDFs into concise, AI-generated summaries to save time, boost productivity, and access key insights faster.**
 - *<a target="_blank" href="https://summ-ai-ze.vercel.app">App Link 🔗</a>*
-
-## Features
 
 <h2>Transforming PDF into Summary</h2>
 
@@ -24,7 +22,7 @@ https://github.com/user-attachments/assets/18535733-8d55-4c0a-9e72-85f32b7b4b6e
 
 ## Tech Stack
 
-This project is built using a modern and powerful tech stack:
+This project is built using a modern and tech stack:
 
 - ⚡ **Next.js** – React framework for building fast and scalable web applications
 - 🗄️ **PostgreSQL** – Reliable and robust relational database
