@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SummAIze
+- **Transform PDFs into consice summaries**
+- *<a target="_blank" href="https://summ-ai-ze.vercel.app">App Link 🔗</a>*
 
-## Getting Started
+## Features
 
-First, run the development server:
+<h2>Transforming PDF into Summary</h2>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 📥 **Download Summary**  
+  Download the generated summary as a `.txt` file for offline use.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- ⏱️ **Estimated Reading Time**  
+  Instantly shows how much time it will take to read the summarized content.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+https://github.com/user-attachments/assets/4e205162-82d5-4429-92de-f2e6093bb492
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+<h2>Payment Integration</h2>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Built a secure payment flow with Stripe for Basic and Pro subscriptions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+https://github.com/user-attachments/assets/18535733-8d55-4c0a-9e72-85f32b7b4b6e
 
-## Deploy on Vercel
+## Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is built using a modern and powerful tech stack:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- ⚡ **Next.js** – React framework for building fast and scalable web applications
+- 🗄️ **PostgreSQL** – Reliable and robust relational database
+- 🧠 **Langchain** – Framework for building LLM-powered apps with chaining and memory
+- 🤖 **OpenAI & Gemini AI** – Dual AI engines for powerful, fallback-based summarization
+- 💳 **Stripe** – Integrated for handling payments and subscriptions
+- 🎨 **Shadcn/UI** – Beautifully designed UI components powered by Radix & Tailwind
+- 🎞️ **Framer Motion** – Smooth and performant animations
+
+## Contact
+For questions or feedback, feel free to reach out:
+- Email : aazimsadan99@gmail.com
+- Linkedin : https://www.linkedin.com/in/aazim-sadan
+---
