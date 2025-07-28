@@ -1,9 +1,13 @@
+"use client"
+
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import Link from 'next/link';
 import { MotionDiv, MotionH1, MotionH2, MotionSection, MotionSpan } from '../common/motion-wrapper';
 import { containerVariants, itemVariants } from '@/utils/constants';
+import { useRouter } from 'next/navigation';
+import { useUser } from '@clerk/nextjs';
 
 const buttonVariants = {
     scale: 1.05,
@@ -14,8 +18,23 @@ const buttonVariants = {
     }
 }
 
-
 export default function HeroSection() {
+    const router = useRouter();
+    const { user, isLoaded } = useUser();
+
+
+    const handleClick = () => {
+        console.log("Handle Clicked")
+        if (!isLoaded) return;
+
+        if (user) {
+            router.push("/upload");
+        } else {
+            router.push("/#pricing");
+        }
+    };
+
+
     return (
         <MotionSection
             variants={containerVariants}
@@ -57,11 +76,14 @@ export default function HeroSection() {
                 variants={itemVariants}
                 whileHover={buttonVariants}
             >
-                <Button variant={'link'} className='text-white mt-6 text-base sm:text-lg lg:text-xl rounded-full px-8 sm:px-10 lg:px-12 py-6 sm:py-7 lg:py-8 lg:mt-16 bg-linear-to-r from-slate-900 to-rose-500 hover:from-rose-500 hover:no-underline hover:to-slate-900 font-bold shadow-lg transition-all duration-300'>
-                    <Link href="/#pricing" className='flex gap-2 items-center'>
-                        <span> Try SummAIre</span>
-                        <ArrowRight className='animate-pulse' />
-                    </Link>
+                <Button
+                    variant={'link'}
+                    onClick={handleClick}
+                    className='text-white mt-6 text-base sm:text-lg lg:text-xl rounded-full px-8 sm:px-10 lg:px-12 py-6 sm:py-7 lg:py-8 lg:mt-16 bg-linear-to-r from-slate-900 to-rose-500 hover:from-rose-500 hover:no-underline hover:to-slate-900 font-bold shadow-lg transition-all duration-300'>
+                    {/* <Link href="/#pricing" className='flex gap-2 items-center'> */}
+                    <span> Try SummAIze</span>
+                    <ArrowRight className='animate-pulse' />
+                    {/* </Link> */}
                 </Button>
             </MotionDiv>
         </MotionSection>
